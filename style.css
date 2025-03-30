@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code&display=swap');
+
+* {
+    margin: 0;
+}
+
+@media (max-width: 640px) {
+    #app {
+        padding: 1rem
+    }
+
+    .container {
+        gap: 1em
+    }
+
+    .grid {
+        grid-template-columns: repeat(4, minmax(60px, 1fr));
+        grid-template-rows: repeat(6, minmax(60px, 1fr));
+        grid-gap: 1em
+    }
+
+    .item,
+    .item-image {
+        border-radius: 16px
+    }
+}
+
+#app {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background-color: #161616;
+    font-family: 'Cascadia Code', monospace;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.item-icon-centered {
+    position: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    z-index: 2;
+}
+
+.container-title {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    grid-template-rows: repeat(6, minmax(100px, 1fr));
+    grid-gap: 1em;
+    grid-template-areas: "telegram telegram spotify spotify" "telegram telegram twitch twitch" "github tiktok twitch twitch" "steammain steammain steam2acc steam2acc" "steammain steammain steam2acc steam2acc" ". youtube youtube ."
+}
+
+.text-small {
+    display: flex;
+    justify-content: center;
+}
+
+.item {
+    position: relative;
+    color: #fff;
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.item-text {
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    text-align: right
+}
+
+.item-youtube .item-icon {
+    color: black;
+}
+
+.item-youtube .item-text {
+    color: black;
+}
+
+.item-tiktok {
+    grid-area: tiktok;
+}
+
+.item-spotify {
+    grid-area: spotify
+}
+
+.item-telegram {
+    grid-area: telegram;
+}
+
+.item-github {
+    grid-area: github;
+}
+
+.item-youtube {
+    grid-area: youtube;
+}
+
+.item-twitch {
+    grid-area: twitch;
+}
+
+.item-steammain {
+    grid-area: steammain;
+}
+
+.item-steam2acc {
+    grid-area: steam2acc;
+}
+
+.item-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 25px;
+    z-index: 2
+}
+
+.item-icon,
+.item-text {
+    transition: transform .3s ease;
+    transition-delay: .1s
+}
+
+.item:hover {
+    filter: none;
+    transform: scale(1.05)
+}
+
+.item:hover .item-icon {
+    transform: translate(20%, 20%) scale(1.2)
+}
+
+.item:hover .item-text {
+    transform: translate(-20%, -20%) scale(1.2)
+}
+
+.text-small {
+    font-size: .9em
+}
+
+.item-telegram .hover-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hover-video {
+    opacity: 0;
+}
+
+.grid a:hover .item-telegram {
+    opacity: 1;
+}
+
+.grid a:hover .hover-video {
+    opacity: 1;
+}
+
+.item-telegram {
+    background-image: url('https://kappa.lol/3LToVC');
+    background-position: bottom;
+    background-size: cover;
+    background-color: #0009;
+    transition: filter .2s ease-in-out, transform .2s ease-in-out;
+    transition-delay: .1s;
+}
+
+.item-spotify {
+    background-image: url('https://kappa.lol/YZSws9');
+    background-size: cover;
+    background-color: #0009;
+    transition: filter .2s ease-in-out, transform .2s ease-in-out;
+    transition-delay: .1s;
+}
+
+.item-github {
+    background-image: url('https://kappa.lol/a5mNy7');
+    background-position: center;
+    background-size: cover;
+    background-color: #0009;
+    transition: filter .2s ease-in-out, transform .2s ease-in-out;
+    transition-delay: .1s;
+}
+
+.item-youtube {
+    background-image: url('https://kappa.lol/u0srKX');
+    background-position: center;
+    background-size: cover;
+    background-color: #0009;
+    transition: filter .2s ease-in-out, transform .2s ease-in-out;
+    transition-delay: .1s;
+}
+
+.item-twitch {
+    background-image: url('https://kappa.lol/WX5CtT');
+    background-position: calc(40%);
+    background-size: cover;
+    background-color: #0009;
+    transition: filter .2s ease-in-out, transform .2s ease-in-out;
+    transition-delay: .1s;
+}
+
+.item-steammain {
+    background-image: url('https://kappa.lol/jjR6zU');
+    background-position: calc(40%);
+    background-size: cover;
+    background-color: #0009;
+    transition: filter .2s ease-in-out, transform .2s ease-in-out;
+    transition-delay: .1s;
+}
+
+.item-steam2acc {
+    background-image: url('https://kappa.lol/xh3wBk');
+    background-position: calc(40%);
+    background-size: cover;
+    background-color: #0009;
+    transition: filter .2s ease-in-out, transform .2s ease-in-out;
+    transition-delay: .1s;
+}
+
+.item-tiktok {
+    background-image: url('https://kappa.lol/lhg3Kl');
+    background-size: cover;
+    background-color: #0009;
+    transition: filter .2s ease-in-out, transform .2s ease-in-out;
+    transition-delay: .1s;
+}
+
+:root {
+    font-family: Cascadia Code, Courier New, Courier, monospace;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    color: #ffffffde;
+    background-color: #161616;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
